@@ -1,0 +1,100 @@
+.layoutContainer {
+  width: 100vw;
+  height: 100vh;
+}
+.header {
+  width: 100vw;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dc0b2b;
+  padding: 0 2.5%;
+}
+
+.headerLeft {
+  display: flex;
+  width: 20%;
+  height: 100%;
+  align-items: center;
+}
+
+.headerRight {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.headerHidden {
+  display: none;
+}
+
+.headerLeft span a {
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.headerRight span a {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.header span a:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5vh;
+  width: 100%;
+  background-color: lightgray;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1250px) {
+  .header {
+    display: flex;
+    width: 100vw;
+  }
+
+  .headerRight {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    display: flex;
+    width: 100vw;
+  }
+
+  .headerLeft {
+    display: none;
+  }
+
+  .headerRight {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    padding: 0 1%;
+  }
+
+  .headerRight span a {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .headerRight .headerHidden {
+    display: inline-flex;
+  }
+}
