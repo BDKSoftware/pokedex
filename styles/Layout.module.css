@@ -52,6 +52,8 @@
 
 .footer {
   display: flex;
+  position: absolute;
+  bottom: 0;
   align-items: center;
   justify-content: center;
   height: 2.5vh;

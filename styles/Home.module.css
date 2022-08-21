@@ -115,3 +115,34 @@
     transform: translateY(0);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .searchText {
+    font-size: small;
+    font-weight: bold;
+  }
+
+  .nameContainer {
+    padding-left: 10px;
+  }
+
+  .typeContainer {
+    padding-right: 10px;
+  }
+
+  .query {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .searchResults {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .searchResults {
+    width: 70%;
+  }
+}
