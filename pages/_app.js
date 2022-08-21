@@ -1,6 +1,10 @@
+// Import Wrapper function for application
 import Layout from "../components/Layout";
+
+// Import Global CSS
 import "../styles/globals.css";
 
+// Functional definition for our app
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
@@ -9,4 +13,5 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
+// Export of MyApp
 export default MyApp;

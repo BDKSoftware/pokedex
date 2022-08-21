@@ -1,15 +1,24 @@
+// Basic React Imports
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+
+// Import Link from NextJS
 import Link from "next/link";
+
+// Import Styling for component
 import classes from "../styles/Home.module.css";
 
+// Functional Definition for Search Item Component
 const SearchItem = ({ pokemon }) => {
+  // State Values saved for the Pokemon
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonImage, setPokemonImage] = useState("");
   const [pokemonType, setPokemonType] = useState([]);
   const [pokemonId, setPokemonId] = useState("");
   const [pokemonColor, setPokemonColor] = useState("");
 
+  // Function that takes in pokemon's name (String) as a parameter
+  // It takes the name and appends it to the API URL String
+  // Returns a pokemon's data in JSON format
   async function getPokemonData(pokemon_name) {
     const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
     const res = await fetch(BASE_URL + pokemon_name);
@@ -17,7 +26,10 @@ const SearchItem = ({ pokemon }) => {
     return pokemon;
   }
 
-  function chooseColor(pokemonType) {
+  // Function that takes in a Pokemon's type(String) as a parameter
+  // Returns a hexidecimal color as a string
+  // Defaults to white but should never default
+  function setPokemonColorbyType(pokemonType) {
     switch (pokemonType) {
       case "bug":
         return "#3b9950";
@@ -60,6 +72,10 @@ const SearchItem = ({ pokemon }) => {
     }
   }
 
+  // Function calls when component parameter Pokemon is initialized or changed
+  // It runs getPokemonData to retrieve pokemon data from API
+  // Then sets state values with the API results (Maybe Change results to be more descriptive?)
+  // If it fails, it console logs the error returned from the API
   useEffect(() => {
     getPokemonData(pokemon.name)
       .then((result) => {
@@ -75,22 +91,23 @@ const SearchItem = ({ pokemon }) => {
             .join(", ")
         );
         setPokemonId(result.id);
-        setPokemonColor(chooseColor(result.types[0].type.name));
+        setPokemonColor(setPokemonColorbyType(result.types[0].type.name));
       })
       .catch((error) => {
         console.log(error.message);
       });
   }, [pokemon]);
 
+  // Return for Rendering
   return (
     <>
+      {/* if the pokemon image is null, it returns a blank React Fragment */}
       {pokemonImage != null ? (
         <Link href={`/pokemon/${pokemonName}`}>
           <div
             className={classes.searchItem}
             style={{
               backgroundColor: pokemonColor.toString() + "B3",
-              opacity: "0.8",
               borderColor: pokemonColor.toString(),
             }}
           >
@@ -115,4 +132,5 @@ const SearchItem = ({ pokemon }) => {
   );
 };
 
+// Export of Search Item for use.
 export default SearchItem;
