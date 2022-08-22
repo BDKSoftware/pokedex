@@ -101,7 +101,9 @@ const SearchItem = ({ pokemon }) => {
   // Return for Rendering
   return (
     <>
-      {/* if the pokemon image is null, it returns a blank React Fragment */}
+      {/* if the pokemon image is null, it returns a blank React Fragment
+      Only images that are not supported are due to recent release (Hisuian Forms/ Gen 9)
+      Therefore will not return that pokemon until API is updated */}
       {pokemonImage != null ? (
         <Link href={`/pokemon/${pokemonName}`}>
           <div
