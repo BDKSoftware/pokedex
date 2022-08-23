@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import classes from "../../styles/PokemonScreen.module.css";
+import { setPokemonColorbyType } from "../../utils/setPokemonColorbyType";
 
 const PokemonScreen = ({ pokemon }) => {
-  console.log(pokemon);
+  let mainType = pokemon.types[0].type.name;
+  let pokemonTypeColor = setPokemonColorbyType(mainType);
+  let types = pokemon.types
+    .map(
+      (type) => type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1)
+    )
+    .join(", ");
+  let pokemonName = pokemon.name;
+
+  console.log(pokemon.types[0].type.name);
   return (
-    <div>
-      <h1>{pokemon.name}</h1>
+    <div className={classes.pokemonScreenContainer}>
+      <div
+        className={classes.pokemonContainer}
+        style={{
+          backgroundColor: pokemonTypeColor + "B3",
+          borderColor: "white",
+        }}
+      ></div>
     </div>
   );
 };

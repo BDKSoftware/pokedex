@@ -27,6 +27,8 @@
   padding: 10px;
   border-radius: 5px;
   border: 3px solid #34aad6;
+  background-color: white;
+  color: black;
 }
 
 .query:focus {

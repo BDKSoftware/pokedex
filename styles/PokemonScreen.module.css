@@ -1,0 +1,15 @@
+.pokemonScreenContainer {
+  width: 100%;
+  height: 89vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc0b2b;
+}
+
+.pokemonContainer {
+  width: 60%;
+  height: 80%;
+  border: 3px solid;
+  border-radius: 10px;
+}
