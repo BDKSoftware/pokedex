@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background-color: #dc0b2b;
 }
 
@@ -12,4 +13,60 @@
   height: 80%;
   border: 3px solid;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 50%;
+  width: 100%;
+}
+
+.topLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.sprite {
+  background-color: white;
+  width: 40%;
+  height: 50%;
+  border-radius: 10px;
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+}
+
+.pokemonDetailCard {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.searchText {
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.titleText {
+  font-weight: bold;
+  font-size: larger;
 }
